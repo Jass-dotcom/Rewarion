@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cambiar de Escenarios | Rewarion</title>
+  <link rel="stylesheet" href="../blog.css">
+  <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Micro+5&display=swap');
+    </style>
+</head>
+<body>
+ <header class="header" id="inicio">
+        <div class="header__menu_navegacion">
+            <!-- LOGO -->
+            <a href="../Inicio.html" class="header__link">
+                <p class="TituloRew">Rewarion</p>
+            </a>
+
+            <!-- NAV -->
+            <nav class="header__barra_navegacion">
+                <ul class="header__lista_desordenada">
+                    <li class="header__lista">
+                        <a class="header__link" href="../blog.html">Volver al Blog</a>
+                    </li>
+                    <li class="header__lista">
+                        <a class="header__link" href="../login.html?mode=login">Cerrar sesión</a>
+                    </li>
+                    <li class="header__lista">
+                        <a href="PJuego.html" class="header__link">Jugar</a>
+                    </li>
+                </ul>
+                <a class="header__btn_perfil" href="PJuego.html">Perfil</a>
+            </nav>
+        </div>
+    </header>
+
+  <main class="blog__contenedor" style="padding-top: 160px;">
+    <h1>Cambiar de Escenarios</h1>
+    <p>En Rewarion puedes explorar diferentes mundos y minijuegos para obtener nuevas recompensas.</p>
+    <ol>
+      <li>Accede a la sección de juegos desde tu perfil o la página principal.</li>
+      <li>Selecciona el escenario que quieras jugar.</li>
+      <li>Completa el objetivo para desbloquear el siguiente nivel.</li>
+    </ol>
+    <p>Consejo: cambia de escenario cuando tengas suficiente stamina para maximizar tus ganancias.</p>
+  </main>
+
+  <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__logos">
+            <h2 class="footer__titulo">Rewarion Web App 👑</h2>
+
+            <div class="footer__info">
+                <div class="footer__logo_info">
+                    <img src="img/footer_location.svg" alt="Logo de Ubicacion" class="footer_logo_info">
+                    <p class="footer_texto_info">Made with love in Fusagasugá, Colombia</p>
+                </div>
+
+                <div class="footer__logo_info">
+                    <img src="img/footer_mail.svg" alt="Logo de un Email" class="footer_logo_info">
+                    <p class="footer_texto_info">servicioalcliente@rewarion.com</p>
+                </div>
+
+                <div class="footer_contenedor_redesSociales">
+                    <a href="https://www.instagram.com/rewarion/" target="_blank">
+                        <img id="instagram_logo" src="img/footer_instagram.png" alt="Logo de Instagram">
+                    </a>
+                    <a href="https://www.youtube.com/" target="_blank">
+                        <img id="youtube_logo" src="img/footer_youtube.png" alt="Logo de Youtube">
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <img id="facebook_logo" src="img/footer_facebook.png" alt="Logo de Facebook">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer_raya"></div>
+        <footer class="footer">
+            <div class="footer__contenedor">
+                <div class="footer__columna">
+                    <h4>Blog</h4>
+                    <ul>
+                        <li><a href="blog.html#como-gano-dinero">¿Cómo gano dinero?</a></li>
+                        <li><a href="blog.html#cambiar-escenarios">Cambiar de Escenarios</a></li>
+                        <li><a href="blog.html#balance-cuenta">Balance de mi cuenta</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__columna">
+                    <h4>Preguntas Frecuentes</h4>
+                    <ul>
+                        <li><a href="faq.html#no-carga-saldo">No carga mi saldo</a></li>
+                        <li><a href="faq.html#transferi-error">Transferí por error</a></li>
+                        <li><a href="faq.html#recompensas-paypal">Recompensas en PayPal</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__columna">
+                    <h4>¿Quieres anunciarte?</h4>
+                    <ul>
+                        <li><a href="faq.html#chat-directo">Chat Directo</a></li>
+                        <li><a href="faq.html#google-ads">Google Ads</a></li>
+                        <li><a href="faq.html#nuestro-patreon">Nuestro Patreon</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </footer>
+
+  <script src="../session.js"></script>
+  <script>requireLogin();</script>
+</body>
+</html>
