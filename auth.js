@@ -59,7 +59,7 @@ function loginSubmit(event) {
     if (usuarioEncontrado) {
         localStorage.setItem('usuarioActual', JSON.stringify(usuarioEncontrado));
         alert('¡Bienvenido ' + usuarioEncontrado.usuario + '!');
-        window.location.href = 'Pjuego.html';
+        window.location.href = 'PJuego.html';
     } else {
         showError('loginError', 'Usuario o contraseña incorrectos');
     }
