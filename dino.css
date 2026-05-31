@@ -1,0 +1,220 @@
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#87ceeb, #bde0ff);
+  font-family: Arial, sans-serif;
+}
+
+.contenedor {
+  width: 800px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  background: linear-gradient(to top, #f0f8ff, #e6f7ff);
+}
+
+.suelo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 20px;
+  width: 1600px;
+  background-image: repeating-linear-gradient(
+    to right,
+    #7b6f3b 0 40px,
+    #8f7f45 40px 80px
+  );
+  transform: translateX(0);
+}
+
+
+.dyno {
+  position: absolute;
+  left: 42px;
+  bottom: -10px;
+  width: 125px;   
+  height: 125px;  
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  image-rendering: pixelated;
+}
+
+
+.dyno.correr {
+  background-image: url("assets/spritesheet-correr.png");
+  
+  background-size: 750px 125px; 
+  animation: correrSprite 0.6s steps(6) infinite;
+}
+@keyframes correrSprite {
+  from { background-position: 0 0; }
+  to   { background-position: -750px 0; }
+}
+
+
+.dyno.saltando {
+  animation: none;
+  background-image: url("assets/spritesheet-correr.png");
+  background-size: 750px 125px; 
+  background-position: 0 0;
+}
+
+/* Animación de morir (4 frames) */
+.dyno.estrellado {
+  background-image: url("assets/spritesheet-morir.png");
+  /* ✨ CORREGIDO: 4 frames * 125px/frame = 500px de ancho total */
+  background-size: 500px 125px; 
+  animation: morirSprite 0.5s steps(4) forwards;
+}
+@keyframes morirSprite {
+  from { background-position: 0 0; }
+ 
+  to   { background-position: -500px 0; }
+}
+
+
+.cactus {
+  position: absolute;
+  bottom: -20px; 
+  width: 110px; 
+  height: 110px; 
+  background-image: url("assets/tronco.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.score {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  background: rgba(255,255,255,0.6);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+.gameover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none; /* oculto al inicio */
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.gameover-box {
+  background: white;
+  padding: 30px 50px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.gameover-box h1 {
+  margin-bottom: 15px;
+  color: #e63946;
+}
+
+.gameover-box p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.gameover-box button {
+  background: #457b9d;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.gameover-box button:hover {
+  background: #1d3557;
+}
+
+
+.boton-salto {
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+  z-index: 20;
+}
+
+#btnSaltar {
+  background: #FFD700;
+  border: none;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: all 0.2s ease-in-out;
+}
+
+#btnSaltar:hover {
+  background: #FFEA00;
+  transform: scale(1.05);
+}
+
+#btnSaltar:active {
+  transform: scale(0.9);
+  background: #FFC300;
+}
+#info-salto{
+  margin: 20px
+}
+
+.pantalla-inicio {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      inset: 0;
+      background: linear-gradient(135deg, #101820, #243B55);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5em;
+      z-index: 999;
+      opacity: 1;
+      transition: opacity 1s ease-in-out;
+      text-align: center;
+    }
+    
+    .pantalla-inicio h1 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+    .pantalla-inicio button {
+      background: #00cc88;
+      border: none;
+      color: white;
+      padding: 10px 25px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .pantalla-inicio button:hover {
+      background: #009966;
+    }
+

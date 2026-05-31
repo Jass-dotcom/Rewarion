@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stamina - Rewarion</title>
+    <link rel="stylesheet" href="stamina.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Micro+5&display=swap');
+    </style>
+</head>
+<body>
+    <header class="header" id="inicio">
+        <div class="header__menu_navegacion">
+            <!-- LOGO -->
+            <a href="Inicio.html" class="header__link">
+                <p class="TituloRew">Rewarion</p>
+            </a>
+
+            <!-- NAV -->
+            <nav class="header__barra_navegacion">
+                <ul class="header__lista_desordenada">
+                    <li class="header__lista">
+                        <a href="Inicio.html" class="header__link">Inicio</a>
+                    </li>
+                    <li class="header__lista">
+                        <a href="Stamina.html" class="header__link">Stamina</a>
+                    </li>
+                    <li class="header__lista">
+                        <a href="PJuego.html" class="header__link">Jugar</a>
+                    </li>
+                </ul>
+                <a class="header__btn_perfil" href="PJuego.html">Perfil</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="stamina-main">
+        <!-- CONTADOR DE STAMINA -->
+        <section class="stamina-header">
+            <div class="stamina-stats">
+                <div class="stat-card">
+                    <h2>⚡ Stamina Actual</h2>
+                    <div class="stamina-counter">
+                        <p class="stamina-numero" id="staminaActual">0</p>
+                        <p class="stamina-max" id="staminaMax">/100</p>
+                    </div>
+                    <div class="barra-stamina">
+                        <div class="barra-relleno" id="barraRelleno"></div>
+                    </div>
+                    <p class="regeneracion" id="tiempoRegeneracion">Regenerándose...</p>
+                </div>
+
+                <div class="stat-card">
+                    <h2>💰 Dinero Total</h2>
+                    <p class="dinero-numero" id="dineroTotal">0</p>
+                    <p class="dinero-texto">Rewarion Coins</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MISIONES DIARIAS -->
+        <section class="hijos__flexbox" id="misiones">
+            <div class="stamina__contenido">
+                <h3>🎯 Misiones Diarias</h3>
+
+                <div class="misiones-grid">
+                    <div class="mision-card">
+                        <div class="mision-header">
+                            <h4>📺 Ver Videos</h4>
+                            <span class="mision-recompensa">+10 ⚡</span>
+                        </div>
+                        <p class="mision-descripcion">Mira videos promocionados y gana stamina</p>
+                        <div class="mision-progreso">
+                            <span id="videosContador">0/3</span> completadas
+                        </div>
+                        <button class="btn-mision" onclick="iniciarVideo()">Ver Anuncios →</button>
+                    </div>
+
+                    <div class="mision-card">
+                        <div class="mision-header">
+                            <h4>🎮 Jugar Partida</h4>
+                            <span class="mision-recompensa">+15 ⚡</span>
+                        </div>
+                        <p class="mision-descripcion">Completa una partida del juego</p>
+                        <div class="mision-progreso">
+                            <span id="juegoContador">0/1</span> completada
+                        </div>
+                        <button class="btn-mision" onclick="irAlJuego()">Jugar Ahora →</button>
+                    </div>
+
+                    <div class="mision-card">
+                        <div class="mision-header">
+                            <h4>🏆 Desafío Especial</h4>
+                            <span class="mision-recompensa">+20 ⚡</span>
+                        </div>
+                        <p class="mision-descripcion">Completa el reto especial de hoy</p>
+                        <div class="mision-progreso">
+                            <span id="desafioContador">0/1</span> completado
+                        </div>
+                        <button class="btn-mision" onclick="iniciarDesafio()">Comenzar Reto →</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIENDA DE STAMINA -->
+        <section class="hijos__flexbox" id="tienda">
+            <div class="stamina__contenido">
+                <h3>🛒 Tienda de Stamina</h3>
+
+                <div class="tienda-grid">
+                    <div class="producto-card">
+                        <div class="producto-header">
+                            <h4>⚡ Boost Pequeño</h4>
+                            <p class="precio">50 Coins</p>
+                        </div>
+                        <p class="producto-descripcion">+20 stamina</p>
+                        <p class="producto-cantidad">Tienes: <span id="boostsPequeños">0</span></p>
+                        <button class="btn-comprar" onclick="comprarProducto('boost_pequeño', 50, 20)">Comprar</button>
+                    </div>
+
+                    <div class="producto-card">
+                        <div class="producto-header">
+                            <h4>⚡ Boost Mediano</h4>
+                            <p class="precio">120 Coins</p>
+                        </div>
+                        <p class="producto-descripcion">+50 stamina</p>
+                        <p class="producto-cantidad">Tienes: <span id="boostsMedianos">0</span></p>
+                        <button class="btn-comprar" onclick="comprarProducto('boost_mediano', 120, 50)">Comprar</button>
+                    </div>
+
+                    <div class="producto-card destacado">
+                        <div class="etiqueta-especial">⭐ POPULAR</div>
+                        <div class="producto-header">
+                            <h4>⚡ Boost Grande</h4>
+                            <p class="precio">250 Coins</p>
+                        </div>
+                        <p class="producto-descripcion">+100 stamina</p>
+                        <p class="producto-cantidad">Tienes: <span id="boostsGrandes">0</span></p>
+                        <button class="btn-comprar" onclick="comprarProducto('boost_grande', 250, 100)">Comprar</button>
+                    </div>
+
+                    <div class="producto-card">
+                        <div class="producto-header">
+                            <h4>🔄 Regeneración Rápida</h4>
+                            <p class="precio">180 Coins</p>
+                        </div>
+                        <p class="producto-descripcion">Rellena todo al instante</p>
+                        <p class="producto-cantidad">Tienes: <span id="rellenos">0</span></p>
+                        <button class="btn-comprar" onclick="comprarProducto('rellenar', 180, 100)">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MURO DE RECOMPENSAS -->
+        <section class="hijos__flexbox" id="recompensas">
+            <div class="stamina__contenido">
+                <h3>🎁 Otras Formas de Ganar</h3>
+
+                <div class="opciones-grid">
+                    <div class="opcion-card">
+                        <h4>🌐 Muro de Recompensas</h4>
+                        <p>Completa ofertas externas y gana stamina</p>
+                        <button class="btn-opcion-externa" onclick="abrirMuroRecompensas()">Ir a Ofertas →</button>
+                    </div>
+
+                    <div class="opcion-card">
+                        <h4>💳 Comprar con PayPal</h4>
+                        <p>Obtén stamina premium directamente</p>
+                        <button class="btn-opcion-externa" onclick="abrirPayPal()">Pagar con PayPal →</button>
+                    </div>
+
+                    <div class="opcion-card">
+                        <h4>📱 Referidos</h4>
+                        <p>Invita amigos y gana stamina compartida</p>
+                        <button class="btn-opcion-externa" onclick="compartirReferido()">Compartir Código →</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HISTORIAL -->
+        <section class="hijos__flexbox" id="historial">
+            <div class="stamina__contenido">
+                <h3>📊 Historial de Stamina</h3>
+                <div class="historial-contenedor" id="historialContenedor">
+                    <p style="text-align: center; color: #999;">No hay movimientos registrados</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    <script src="session.js"></script>
+    <script src="stamina.js"></script>
+    <script src="MasInformacion.js"></script>
+</body>
+</html>

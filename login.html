@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rewarion - Autenticación</title>
+    <link rel="stylesheet" href="auth.css">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Micro+5&display=swap');
+
+.form-panel {
+    display: none;
+}
+.form-panel.active {
+    display: block;
+}
+.link-button {
+    background: none;
+    border: none;
+    color: #FFD60A;
+    cursor: pointer;
+    font: inherit;
+    text-decoration: underline;
+    padding: 0;
+}
+.link-button:hover {
+    color: #fff;
+}
+    </style>
+</head>
+<body>
+  <header class="header" id="inicio">
+        <div class="header__menu_navegacion">
+            <!-- LOGO -->
+            <a href="Inicio.html" class="header__link">
+              <p class="TituloRew">Rewarion</p>
+            </a>
+            <!-- NAV -->
+            <nav class="header__barra_navegacion">
+                <a class="header__btn_login" href="login.html?mode=login">Iniciar Sesión</a>
+                <a class="header__btn_perfil" href="login.html?mode=register">Registrarse</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="registro-contenedor auth-contenedor">
+        <div class="form-panel login-panel active">
+            <h2>¡Hola!</h2>
+            <form id="formLogin">
+                <input type="text" id="usuarioLogin" placeholder="Usuario" required>
+                <input type="password" id="contrasenaLogin" placeholder="Contraseña" required>
+                <div id="loginError" style="color: red; font-size: 12px; margin-top: 5px;"></div>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+            <p class="login-text">¿No tienes una cuenta? <a href="#" class="link-button" id="switchToRegistro">¡Regístrate Ahora!</a></p>
+        </div>
+
+        <div class="form-panel registro-panel">
+            <h2>¡¡Bienvenido!!</h2>
+            <form id="formRegistro">
+                <input type="text" id="usuarioRegistro" placeholder="Usuario" required>
+                <input type="email" id="correoRegistro" placeholder="Correo electrónico" required>
+                <input type="password" id="contrasenaRegistro" placeholder="Contraseña (6 letras + 2 números)" required>
+                <input type="password" id="retypeRegistro" placeholder="Repite la contraseña" required>
+                <div id="registroError" style="color: red; font-size: 12px; margin-top: 5px;"></div>
+                <button type="submit">Registrarse</button>
+           </form>
+           <p class="login-text">¿Ya tienes una cuenta? <a href="#" class="link-button" id="switchToLogin">Inicia sesión</a></p>
+        </div>
+    </div>
+
+    <script src="session.js"></script>
+    <script src="auth.js"></script>
+
+  <!-- FOOTER -->
+        <footer class="footer">
+          <!-- los logos -->
+          <div class="footer__logos">
+            <h2 class="footer__titulo"> Rewarion Web App 👑</h2>
+            <div class="footer__info">
+                <div class="footer__logo_info">
+                    <img src="img/footer_location.svg" alt="Logo de Ubicacion" class="footer_logo_info">
+                    <p class="footer_texto_info">Made with love in Fusagasugá, Colombia</p>
+                </div>
+
+                <div class="footer__logo_info">
+                    <img src="img/footer_mail.svg" alt="Logo de un Email" class="footer_logo_info">
+                    <p class="footer_texto_info">servicioalcliente@rewarion,com</p>
+                </div>
+
+                <div class="footer_contenedor_redesSociales">
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <img id="instagram_logo" src="img/footer_instagram.png" alt="Logo de Instagram">
+                    </a>
+                    <a href="https://www.youtube.com/" target="_blank">
+                        <img id="youtube_logo" src="img/footer_youtube.png" alt="Logo de Youtube">
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <img id="facebook_logo" src="img/footer_facebook.png" alt="Logo de Facebook">
+                    </a>
+                </div>
+            </div>
+          </div>
+
+            <div class="footer_raya"></div>
+            <footer class="footer">
+  <div class="footer__contenedor">
+    <div class="footer__columna">
+      <h4>Blog</h4>
+      <ul>
+        <li><a href="blog.html#como-gano-dinero">¿Cómo gano dinero?</a></li>
+        <li><a href="blog.html#cambiar-escenarios">Cambiar de Escenarios</a></li>
+        <li><a href="blog.html#balance-cuenta">Balance de mi cuenta</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__columna">
+      <h4>Preguntas Frecuentes</h4>
+      <ul>
+        <li><a href="faq.html#no-carga-saldo">No carga mi saldo</a></li>
+        <li><a href="faq.html#transferi-error">Transferí por error</a></li>
+        <li><a href="faq.html#recompensas-paypal">Recompensas en PayPal</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__columna">
+      <h4>¿Quieres anunciarte?</h4>
+      <ul>
+        <li><a href="faq.html#chat-directo">Chat Directo</a></li>
+        <li><a href="faq.html#google-ads">Google Ads</a></li>
+        <li><a href="faq.html#nuestro-patreon">Nuestro Patreon</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+        </footer>
+
+</body>
+</html>

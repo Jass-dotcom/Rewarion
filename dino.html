@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Caballero</title>
+  <link rel="stylesheet" href="dino.css" />
+   
+</head>
+<body>
+  <div class="pantalla-inicio" id="pantallaInicio" >
+    <h1>⚔️ Reflejos del Dragón</h1>
+    <p>Prepárate para saltar los obstáculos y demostrar cuan ágil eres</p>
+    <p id="info-salto">Presiona ↑ para saltar</p>
+    <button id="btnIniciar"onclick="iniciarJuego()">Iniciar Juego</button>
+  </div>
+  <div class="contenedor">
+    <div class="suelo" id="suelo"></div>
+
+ 
+    <div class="dyno" id="dyno"></div>
+
+    
+    <div class="score" id="score">0</div>
+  </div>
+  <div class="boton-salto">
+  <button id="btnSaltar">Saltar</button>
+</div>
+
+ 
+<div class="gameover" id="gameover">
+  <div class="gameover-box">
+    <h1>💀 GAME OVER 💀</h1>
+    <p id="final-score">Puntuación: 0</p>
+    <button onclick="reiniciar()">Reiniciar</button>
+  </div>
+</div>
+
+
+  <script src="dino.js"></script>
+
+  <script>
+    function iniciarJuego() {
+      const sonidoInicio = new Audio("audio/start.wav"); 
+      document.getElementById('pantallaInicio').style.display = 'none';    
+      sonidoInicio.play(); 
+      window.focus(); 
+      init(); 
+    }
+  </script>
+  <script>
+   
+  btnIniciar.addEventListener("click", () => {
+    
+    pantallaInicio.classList.add("ocultar");
+    setTimeout(() => {
+      pantallaInicio.style.display = "none";
+      init(); 
+    }, 1000);
+  });
+</script>
+
+</body>
+</html>
